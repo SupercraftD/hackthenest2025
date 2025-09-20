@@ -27,13 +27,12 @@ func _physics_process(delta: float) -> void:
 		target_velocity = wander_direction * (speed * 0.5) # slower wandering
 
 	velocity = target_velocity
-	var col = move_and_slide()
+	var col = move_and_collide(velocity * delta)
 
 	if col:
-		for i in range(get_slide_collision_count()):
-			var c = get_slide_collision(i).get_collider()
-			if c.is_in_group("player"):
-				c.hurt(1,self)
+		var c = col.get_collider()
+		if c.is_in_group("player"):
+			c.hurt(1,self)
 
 	# Make the enemy face the movement direction
 	if velocity.length() > 1.0:
@@ -46,8 +45,8 @@ func die():
 	queue_free()
 
 func hurt(dmg, atk):
-		hp -= dmg
-		
+	hp -= dmg
+	
 
 func is_player_in_sight() -> bool:
 	for i in sight.get_overlapping_bodies():
