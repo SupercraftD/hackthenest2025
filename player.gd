@@ -3,12 +3,17 @@ extends CharacterBody2D
 @onready var roll = $Roll
 @export var cursorProj : PackedScene
 
-var speed = 400
+@onready var dustParticles = $dust
+var speed = 50
 
 func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("roll"):
 		roll.startRoll(2)
+	
+	if abs(velocity.x) > 0.1:
+		dustParticles.emitting = true
+		dustParticles.position.x = -16 * sign(velocity.x)
 	
 	velocity = Input.get_vector("left","right","up","down") * speed
 	move_and_slide()

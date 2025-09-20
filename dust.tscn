@@ -5,8 +5,11 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="dust" type="CPUParticles2D"]
+scale = Vector2(2, 2)
+emitting = false
 amount = 3
 lifetime = 1.5
+one_shot = true
 explosiveness = 0.22
 randomness = 0.08
 gravity = Vector2(0, 0)
