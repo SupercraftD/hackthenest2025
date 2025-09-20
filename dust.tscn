@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://h3wk5g0iu00n"]
+
+[sub_resource type="Curve" id="Curve_giydc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="dust" type="CPUParticles2D"]
+amount = 3
+lifetime = 1.5
+explosiveness = 0.22
+randomness = 0.08
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+scale_amount_curve = SubResource("Curve_giydc")

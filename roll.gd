@@ -1,16 +1,16 @@
 extends Node2D
 
 @onready var durationTimer = $durationTimer
-var canDash = true
+var canRoll = true
 
-func startDash(duration):
+func startRoll(duration):
 	durationTimer.wait_time = duration
 	durationTimer.start()
 	
-func isDashing():
+func isRolling():
 	return !durationTimer.is_stopped()
 	
-func endDash():
-	canDash = false
+func endRoll():
+	canRoll = false
 	await get_tree().create_timer(3).timeout
-	canDash = true
+	canRoll = true
