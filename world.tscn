@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://bo8xvbdjcm26w" path="res://assets/tileset.tres" id="2_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://1eccyxdcm8i5" path="res://player.tscn" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://cmaurlqpnj371" path="res://bug.tscn" id="4_aqk2v"]
-[ext_resource type="PackedScene" uid="uid://b12alv8jkih7h" path="res://interactables/mouseexefolder.tscn" id="5_036b0"]
+[ext_resource type="PackedScene" path="res://interactables/mouseexefolder.tscn" id="5_036b0"]
 [ext_resource type="PackedScene" path="res://interactables/lore1.tscn" id="6_dwbse"]
 
 [node name="world" type="Node2D"]
@@ -33,5 +33,18 @@ position = Vector2(3071, 510)
 [node name="lore1 txt" parent="." instance=ExtResource("6_dwbse")]
 position = Vector2(536, 504)
 
-[node name="mouseexefolder" parent="." instance=ExtResource("5_036b0")]
+[node name="mouseexefolder" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(2713, 730)
+script = null
+
+[node name="mouseexefolder2" parent="." instance=ExtResource("5_036b0")]
+position = Vector2(2720, 725)
