@@ -75,7 +75,7 @@ animations = [{
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dw050"]
 bg_color = Color(0.5176471, 0.654902, 0.34117648, 0.8)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
 collision_layer = 2
 collision_mask = 2
@@ -134,7 +134,7 @@ theme_override_font_sizes/italics_font_size = 32
 theme_override_font_sizes/mono_font_size = 32
 bbcode_enabled = true
 
-[node name="Button" type="Button" parent="CanvasLayer/dialoguepopup"]
+[node name="Button" type="Button" parent="CanvasLayer/dialoguepopup" groups=["player"]]
 layout_mode = 0
 offset_left = 234.0
 offset_top = 185.0

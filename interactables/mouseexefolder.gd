@@ -1,4 +1,8 @@
 extends Interactable
 
 func interact(player):
-	print(player)
+	
+	await player.promptDialogue([
+		"You find a MOUSE CURSOR in the folder"
+	])
+	

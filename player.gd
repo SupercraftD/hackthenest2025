@@ -12,7 +12,7 @@ var speed = 150
 var canShoot = true
 
 func _ready():
-	promptDialogue(["hiqhiqhiqjewifje","ofjwiwjiowejiwhe"])
+	pass
 
 func promptDialogue(tree):
 	inDialogue = true
