@@ -29,6 +29,7 @@ func _physics_process(delta: float) -> void:
 					c.hurt(dmg, self)
 					emit_signal("done")
 					queue_free()
+					return
 
 		if onlyCollidingWithParent:
 			return
