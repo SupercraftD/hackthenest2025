@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://8h3vo3qi2rtt"]
+[gd_scene load_steps=0 format=3 uid="uid://8h3vo3qi2rtt"]
 
 [node name="explosion" type="CPUParticles2D"]
 amount = 12
