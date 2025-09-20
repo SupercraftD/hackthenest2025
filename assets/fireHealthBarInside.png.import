@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvxr754rg12pk"
-path="res://.godot/imported/fireWallPortal.png-b3baf0000a83fc591adfc018466de4b3.ctex"
+uid="uid://dydu7qnyr7gb1"
+path="res://.godot/imported/fireHealthBarInside.png-f5ed7c496b9c427be7beddda55f1e314.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fireWallPortal.png"
-dest_files=["res://.godot/imported/fireWallPortal.png-b3baf0000a83fc591adfc018466de4b3.ctex"]
+source_file="res://assets/fireHealthBarInside.png"
+dest_files=["res://.godot/imported/fireHealthBarInside.png-f5ed7c496b9c427be7beddda55f1e314.ctex"]
 
 [params]
 
