@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 			if c != shooter:
 				onlyCollidingWithParent = false
 				
-				if c.hurt:
+				if c.has_method("hurt"):
 					c.hurt(dmg, self)
 					emit_signal("done")
 					queue_free()
