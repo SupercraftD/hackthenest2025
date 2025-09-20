@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://doax7n2lmx0wm"]
+[gd_scene load_steps=11 format=4 uid="uid://doax7n2lmx0wm"]
 
 [ext_resource type="Texture2D" uid="uid://b4b05y6ibi0q1" path="res://assets/tutorialbg.png" id="1_fj7yv"]
 [ext_resource type="TileSet" uid="uid://bo8xvbdjcm26w" path="res://assets/tileset.tres" id="2_tlwt5"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://73bnbv4qcwo4" path="res://interactables/lore1.tscn" id="6_dwbse"]
 [ext_resource type="PackedScene" uid="uid://ctwxcet42mvxn" path="res://interactables/sign 1.tscn" id="7_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://ws4o1q0in08p" path="res://interactables/secret1.tscn" id="8_gbfbk"]
+[ext_resource type="PackedScene" uid="uid://1bapquncqcnh" path="res://interactables/fireWall1.tscn" id="9_wse8f"]
+[ext_resource type="PackedScene" uid="uid://bhcg7yndgkspv" path="res://interactables/fireWall2.tscn" id="10_ic0uy"]
 
 [node name="world" type="Node2D"]
 texture_filter = 1
@@ -43,3 +45,12 @@ position = Vector2(2935, 507)
 
 [node name="Secret 1" parent="." instance=ExtResource("8_gbfbk")]
 position = Vector2(4216, -200)
+
+[node name="fireWall1" parent="." instance=ExtResource("9_wse8f")]
+position = Vector2(3935, 223)
+
+[node name="fireWall2" parent="." instance=ExtResource("10_ic0uy")]
+position = Vector2(4178, 663)
+
+[node name="fireWall3" parent="." instance=ExtResource("9_wse8f")]
+position = Vector2(4659, 850)
