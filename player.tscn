@@ -141,3 +141,10 @@ offset_top = 185.0
 offset_right = 273.0
 offset_bottom = 216.0
 text = ">"
+
+[node name="hpbar" type="ProgressBar" parent="."]
+offset_left = -29.0
+offset_top = -27.0
+offset_right = 32.0
+offset_bottom = -20.0
+show_percentage = false

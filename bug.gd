@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 @onready var hurtBox = $hurtBox
 @onready var player = $Player
-@onready var sight = $Sight
+@onready var sight : Area2D = $Sight
 
+var hp = 2
 
 var speed: float = 50.0
 var wander_direction: Vector2 = Vector2.ZERO
@@ -26,13 +27,31 @@ func _physics_process(delta: float) -> void:
 		target_velocity = wander_direction * (speed * 0.5) # slower wandering
 
 	velocity = target_velocity
-	move_and_slide()
+	var col = move_and_slide()
+
+	if col:
+		for i in range(get_slide_collision_count()):
+			var c = get_slide_collision(i).get_collider()
+			if c.is_in_group("player"):
+				c.hurt(1,self)
 
 	# Make the enemy face the movement direction
 	if velocity.length() > 1.0:
 		rotation = velocity.angle()
+	
+	if hp <= 0:
+		die()
 
+func die():
+	queue_free()
+
+func hurt(dmg, atk):
+		hp -= dmg
+		
 
 func is_player_in_sight() -> bool:
-	# In Godot 4, check with `in` instead of `.has()`
-	return player in sight.get_overlapping_bodies()
+	for i in sight.get_overlapping_bodies():
+		if i.is_in_group("player"):
+			player = i
+			return true
+	return false

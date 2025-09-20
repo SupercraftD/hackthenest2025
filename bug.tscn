@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmaurlqpnj371"]
+[gd_scene load_steps=11 format=3 uid="uid://baghy5i34quxa"]
 
 [ext_resource type="Script" uid="uid://hi4kgkari81o" path="res://bug.gd" id="1_c761e"]
 [ext_resource type="Texture2D" uid="uid://by0df6qmwv8ms" path="res://assets/bug.png" id="1_g6v7b"]
@@ -41,10 +41,8 @@ radius = 252.28555
 radius = 14.0
 height = 38.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5tblr"]
-radius = 110.01818
-
 [node name="Bug" type="CharacterBody2D"]
+collision_mask = 3
 script = ExtResource("1_c761e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -55,14 +53,11 @@ frame = 2
 frame_progress = 1.0
 
 [node name="Sight" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sight"]
 shape = SubResource("CircleShape2D_c761e")
 
 [node name="hurtBox" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_c761e")
-
-[node name="jump" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="jump"]
-shape = SubResource("CircleShape2D_5tblr")

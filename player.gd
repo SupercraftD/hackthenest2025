@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 @onready var roll = $Roll
 @export var cursorProj : PackedScene
+@onready var hpbar = $hpbar
+
+var hp = 10
 
 var inDialogue = false
 var interacting = []
@@ -11,8 +14,11 @@ var speed = 150
 
 var canShoot = true
 
+var canHurt = true
+
 func _ready():
-	pass
+	hpbar.max_value = hp
+	hpbar.value = hp
 
 func promptDialogue(tree):
 	inDialogue = true
@@ -20,7 +26,7 @@ func promptDialogue(tree):
 	inDialogue = false
 
 func _physics_process(delta):
-	
+	hpbar.value = hp
 	move()
 	
 	if (velocity == Vector2.ZERO):
@@ -74,3 +80,10 @@ func shoot():
 		
 		await p.done
 		canShoot = true
+
+func hurt(dmg, atk):
+	if canHurt:
+		hp -= dmg
+		canHurt = false
+		await get_tree().create_timer(0.5).timeout
+		canHurt = true
