@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv0yaxe3woskq"
-path="res://.godot/imported/pixil-frame-0 (3).png-4bd46f1f96c816512f8326c81f373c95.ctex"
+uid="uid://b515vhbbx5igr"
+path="res://.godot/imported/Fire Sprite Art.jpg-e71af63484245b81dd4d93fd58684ed1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pixil-frame-0 (3).png"
-dest_files=["res://.godot/imported/pixil-frame-0 (3).png-4bd46f1f96c816512f8326c81f373c95.ctex"]
+source_file="res://Fire Sprite Art.jpg"
+dest_files=["res://.godot/imported/Fire Sprite Art.jpg-e71af63484245b81dd4d93fd58684ed1.ctex"]
 
 [params]
 
