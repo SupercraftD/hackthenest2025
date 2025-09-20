@@ -7,10 +7,12 @@ extends CharacterBody2D
 	"mouse":preload("res://projectiles/cursorprojectile.tscn")
 }
 
-var rollSpeed = 400
+var rollSpeed = 200
 var rollVector = Vector2()
 
 var hp = 10
+
+var stam = 100
 
 var inDialogue = false
 var interacting = []
@@ -36,6 +38,11 @@ func _physics_process(delta):
 	hpbar.value = hp
 	move()
 	
+	if stam < 100:
+		stam += 1
+	
+	$CanvasLayer/stambar.value = stam
+	
 	if not isRolling:
 		if (velocity == Vector2.ZERO):
 			$AnimatedSprite2D.play("idle")
@@ -57,7 +64,8 @@ func move():
 	if inDialogue:
 		return
 	
-	if Input.is_action_just_pressed("roll") and roll.canRoll and not isRolling:
+	if Input.is_action_just_pressed("roll") and not isRolling and stam>=100:
+		stam = 0
 		isRolling = true
 		rollVector = velocity.normalized()* rollSpeed
 		$AnimatedSprite2D.play("roll")

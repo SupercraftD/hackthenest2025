@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctc6gwp7u772u"
-path="res://.godot/imported/insideSTM.png-95a81cb2e70bf0ac933481d4d2917ef4.ctex"
+path="res://.godot/imported/insideSTM.png-8e252da4bdafc22a394a84eda6729ec0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://insideSTM.png"
-dest_files=["res://.godot/imported/insideSTM.png-95a81cb2e70bf0ac933481d4d2917ef4.ctex"]
+source_file="res://assets/insideSTM.png"
+dest_files=["res://.godot/imported/insideSTM.png-8e252da4bdafc22a394a84eda6729ec0.ctex"]
 
 [params]
 
