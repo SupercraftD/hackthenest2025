@@ -1,4 +1,4 @@
 extends Node
 
-var availableWeapons = []
-var weapon = -1
+var availableWeapons = ["mouse"]
+var weapon = 0

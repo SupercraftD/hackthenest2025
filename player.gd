@@ -7,6 +7,8 @@ extends CharacterBody2D
 	"mouse":preload("res://projectiles/cursorprojectile.tscn")
 }
 
+
+var dead = false
 var rollSpeed = 200
 var rollVector = Vector2()
 
@@ -38,6 +40,9 @@ func _physics_process(delta):
 	hpbar.value = hp
 	move()
 	
+	if hp <= 0:
+		die()
+	
 	if stam < 100:
 		stam += 1
 	
@@ -61,7 +66,7 @@ func _physics_process(delta):
 		interact()
 
 func move():
-	if inDialogue:
+	if inDialogue or dead:
 		return
 	
 	if Input.is_action_just_pressed("roll") and not isRolling and stam>=100:
@@ -93,7 +98,7 @@ func interact():
 
 func shoot():
 	
-	if GameInfo.weapon == -1:
+	if inDialogue or GameInfo.weapon == -1:
 		return
 	
 	var weapon = GameInfo.availableWeapons[GameInfo.weapon]
@@ -111,7 +116,7 @@ func shoot():
 		p.shooter = self
 		get_parent().add_child(p)
 		
-		$Camera2D.start_shake(8.0, 0.5)
+		#$Camera2D.start_shake(8.0, 0.5)
 		
 		await p.done
 		canShoot = true
@@ -122,3 +127,10 @@ func hurt(dmg, atk):
 		canHurt = false
 		await get_tree().create_timer(0.5).timeout
 		canHurt = true
+
+func die():
+	dead = true
+	create_tween().tween_property(self,"modulate",Color(0,0,0),1)
+	await create_tween().tween_property(self, "rotation_degrees",90,1).finished
+	
+	get_tree().reload_current_scene()
