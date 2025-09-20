@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b12alv8jkih7h"]
+
+[ext_resource type="Script" uid="uid://b2dkf3av4mhre" path="res://interactables/Interactable.gd" id="1_5xmjq"]
+
+[node name="mouseexefolder" type="Area2D"]
+script = ExtResource("1_5xmjq")
+metadata/_custom_type_script = "uid://b2dkf3av4mhre"
