@@ -32,7 +32,8 @@ func _physics_process(delta: float) -> void:
 	if col:
 		var c = col.get_collider()
 		if c.is_in_group("player"):
-			c.hurt(3,self)
+			c.hurt(4,self)
+			die()
 
 	# Make the enemy face the movement direction
 	if velocity.length() > 1.0:
