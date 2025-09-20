@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dlnaf24brc2gp" path="res://assets/roll.png" id="4_b26j0"]
 [ext_resource type="PackedScene" uid="uid://pfyjw8n0bcli" path="res://roll.tscn" id="4_hqtel"]
 [ext_resource type="Texture2D" uid="uid://cqbayvbks4kw8" path="res://assets/shooting.png" id="5_dw050"]
-[ext_resource type="PackedScene" uid="uid://h3wk5g0iu00n" path="res://dust.tscn" id="5_sweqy"]
+[ext_resource type="PackedScene" path="res://dust.tscn" id="5_sweqy"]
 [ext_resource type="Script" uid="uid://b1wsymee5q140" path="res://dialoguepopup.gd" id="9_nvl01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]

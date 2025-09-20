@@ -6,3 +6,6 @@
 script = ExtResource("1_us4ls")
 
 [node name="durationTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="durationTimer" to="." method="endRoll"]
