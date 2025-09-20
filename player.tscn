@@ -1,14 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://1eccyxdcm8i5"]
+[gd_scene load_steps=18 format=3 uid="uid://1eccyxdcm8i5"]
 
 [ext_resource type="Script" uid="uid://sm40qmo2rdgy" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="PackedScene" path="res://cursorprojectile.tscn" id="2_hqtel"]
+[ext_resource type="PackedScene" uid="uid://bu1y4w3igfgwb" path="res://projectiles/cursorprojectile.tscn" id="2_hqtel"]
 [ext_resource type="Texture2D" uid="uid://jah366jyakid" path="res://assets/idle.png" id="3_1jxqw"]
 [ext_resource type="Texture2D" uid="uid://b7drw4qcl0l1" path="res://assets/playerWalk.png" id="3_i3pqv"]
-
 [ext_resource type="PackedScene" uid="uid://pfyjw8n0bcli" path="res://roll.tscn" id="4_hqtel"]
 [ext_resource type="Texture2D" uid="uid://cqbayvbks4kw8" path="res://assets/shooting.png" id="5_dw050"]
-[ext_resource type="PackedScene" uid="uid://h3wk5g0iu00n" path="res://dust.tscn" id="5_sweqy"]
-
+[ext_resource type="PackedScene" path="res://dust.tscn" id="5_sweqy"]
+[ext_resource type="Script" uid="uid://b1wsymee5q140" path="res://dialoguepopup.gd" id="9_nvl01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
 size = Vector2(24, 34)
@@ -73,6 +72,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dw050"]
+bg_color = Color(0.5176471, 0.654902, 0.34117648, 0.8)
+
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
 collision_layer = 2
@@ -99,3 +101,43 @@ position = Vector2(-1, -2)
 [node name="dust" parent="." instance=ExtResource("5_sweqy")]
 position = Vector2(0, 15)
 amount = 6
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="interactlabel" type="Label" parent="CanvasLayer"]
+offset_left = 447.0
+offset_top = 423.0
+offset_right = 725.0
+offset_bottom = 468.0
+theme_override_font_sizes/font_size = 32
+text = "Press E to interact"
+
+[node name="dialoguepopup" type="Panel" parent="CanvasLayer" node_paths=PackedStringArray("label", "button")]
+visible = false
+offset_left = 312.0
+offset_top = 341.0
+offset_right = 830.0
+offset_bottom = 563.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dw050")
+script = ExtResource("9_nvl01")
+label = NodePath("RichTextLabel")
+button = NodePath("Button")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/dialoguepopup"]
+layout_mode = 0
+offset_right = 517.0
+offset_bottom = 183.0
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+bbcode_enabled = true
+
+[node name="Button" type="Button" parent="CanvasLayer/dialoguepopup"]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 185.0
+offset_right = 273.0
+offset_bottom = 216.0
+text = ">"
