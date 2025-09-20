@@ -27,7 +27,7 @@ func start():
 
 func _physics_process(delta: float) -> void:
 	bar.value = hp
-	if not started:
+	if not started or done:
 		return
 	
 	velocity = Vector2(speed,0)
@@ -45,9 +45,9 @@ func _physics_process(delta: float) -> void:
 	
 	if hp < 0.5*maxhp and $geysertimer.is_stopped():
 		$geysertimer.start()
-	#print(hp," ",done)
+	print(hp," ",done)
 	if hp <= 0 and not done:
-		#print("rahh")
+		print("rahh")
 		die()
 
 func die():
@@ -83,6 +83,7 @@ func fireballArray():
 	var s = -60
 	var e = 60
 	for a in range(s,e,(e-s)/8.0):
+		if done:return
 		var proj = fireballProj.instantiate()
 		proj.global_position = $firevalves/Marker2D2.global_position
 		proj.global_rotation_degrees = a
