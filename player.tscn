@@ -64,7 +64,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dw050")
 }],
-"loop": true,
+"loop": false,
 "name": &"shoot",
 "speed": 5.0
 }]
@@ -86,8 +86,6 @@ zoom = Vector2(1.5, 1.5)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4flbx")
 animation = &"shoot"
-frame = 1
-frame_progress = 0.23871599
 
 [node name="Roll" parent="." instance=ExtResource("4_hqtel")]
 position = Vector2(-1, -2)
