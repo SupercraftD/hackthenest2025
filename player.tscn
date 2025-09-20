@@ -205,10 +205,10 @@ text = ">"
 
 [node name="stambar" type="TextureProgressBar" parent="CanvasLayer"]
 texture_filter = 1
-offset_left = 12.0
-offset_top = -20.0
-offset_right = 338.0
-offset_bottom = 306.0
+offset_left = 37.0
+offset_top = 130.0
+offset_right = 363.0
+offset_bottom = 211.0
 value = 50.0
 nine_patch_stretch = true
 texture_over = ExtResource("10_nvl01")
@@ -216,10 +216,10 @@ texture_progress = ExtResource("11_ivps1")
 
 [node name="hpbar" type="TextureProgressBar" parent="CanvasLayer"]
 texture_filter = 1
-offset_left = 9.0
-offset_top = -100.0
-offset_right = 529.0
-offset_bottom = 245.0
+offset_left = 37.0
+offset_top = 110.0
+offset_right = 557.0
+offset_bottom = 193.0
 value = 50.0
 nine_patch_stretch = true
 texture_over = ExtResource("10_nvl01")
