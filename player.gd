@@ -123,7 +123,7 @@ func shoot():
 
 func hurt(dmg, atk):
 	if canHurt and not isRolling:
-		hp -= dmg
+		#hp -= dmg
 		canHurt = false
 		await get_tree().create_timer(0.5).timeout
 		canHurt = true

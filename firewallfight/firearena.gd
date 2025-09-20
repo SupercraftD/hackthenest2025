@@ -16,4 +16,5 @@ func _ready():
 	
 func done():
 	for i in geysers:
-		i.queue_free()
+		if i != null:
+			i.queue_free()

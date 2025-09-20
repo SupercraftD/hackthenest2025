@@ -10,7 +10,7 @@ signal dead
 @export var fireballProj : PackedScene
 @export var geyser : PackedScene
 @onready var player = get_parent().get_node("Player")
-
+var done = false
 var speed = 50
 var started = false
 func start():
@@ -45,20 +45,22 @@ func _physics_process(delta: float) -> void:
 	
 	if hp < 0.5*maxhp and $geysertimer.is_stopped():
 		$geysertimer.start()
-	
-	if hp <= 0:
+	#print(hp," ",done)
+	if hp <= 0 and not done:
+		#print("rahh")
 		die()
 
 func die():
+	done = true
 	emit_signal("dead")
-	await player.promptDialogue("[b]Firewall: [/b]You may have overridden the firewall... but you'll never get past the DNS!")
+	await player.promptDialogue(["[b]Firewall: [/b]You may have overridden the firewall... but you'll never get past the DNS!"])
 	queue_free()
 
 func hurt(dmg, atk):
 	hp -= dmg
 
 func shootFireball():
-	
+	if done:return
 	var spot = $firevalves/Marker2D
 	for i in $firevalves.get_children():
 		if i.global_position.distance_to(player.global_position) < spot.global_position.distance_to(player.global_position):
@@ -77,6 +79,7 @@ func shootFireball():
 	$Fireballtimer.wait_time -= 0.01
 
 func fireballArray():
+	if done:return
 	var s = -60
 	var e = 60
 	for a in range(s,e,(e-s)/8.0):
@@ -89,6 +92,7 @@ func fireballArray():
 		await get_tree().create_timer(0.15).timeout
 
 func spawnGeyser():
+	if done:return
 	var spot = $top
 	if player.global_position.y > $firevalves/Marker2D2.global_position.y:
 		spot = $bottom

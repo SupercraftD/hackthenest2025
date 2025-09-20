@@ -65,6 +65,7 @@ position = Vector2(0, 146)
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
 visible = false
+texture_filter = 1
 offset_left = 209.0
 offset_top = 499.0
 offset_right = 962.0
