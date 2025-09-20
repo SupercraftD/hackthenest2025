@@ -1,5 +1,7 @@
 extends Node2D
 
+var geysers = []
+
 func _ready():
 	$fireWall.modulate.a = 0
 	await $Player.promptDialogue([
@@ -10,3 +12,8 @@ func _ready():
 		"[center][b]Firewall: [/b]you... shall... not... PASS!!"
 	])
 	$fireWall.start()
+	$fireWall.dead.connect(done)
+	
+func done():
+	for i in geysers:
+		i.queue_free()
