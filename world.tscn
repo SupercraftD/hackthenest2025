@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://doax7n2lmx0wm"]
+[gd_scene load_steps=7 format=4 uid="uid://doax7n2lmx0wm"]
 
 [ext_resource type="Texture2D" uid="uid://b4b05y6ibi0q1" path="res://assets/tutorialbg.png" id="1_fj7yv"]
 [ext_resource type="TileSet" uid="uid://bo8xvbdjcm26w" path="res://assets/tileset.tres" id="2_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://1eccyxdcm8i5" path="res://player.tscn" id="3_tlwt5"]
 [ext_resource type="PackedScene" path="res://bug.tscn" id="4_aqk2v"]
-[ext_resource type="PackedScene" uid="uid://b12alv8jkih7h" path="res://interactables/mouseexefolder.tscn" id="5_dwbse"]
+[ext_resource type="PackedScene" path="res://interactables/mouseexefolder.tscn" id="5_036b0"]
+[ext_resource type="PackedScene" uid="uid://73bnbv4qcwo4" path="res://interactables/lore1.tscn" id="6_dwbse"]
 
 [node name="world" type="Node2D"]
 texture_filter = 1
@@ -27,7 +28,10 @@ tile_set = ExtResource("2_tlwt5")
 position = Vector2(251, 495)
 
 [node name="Bug" parent="." instance=ExtResource("4_aqk2v")]
-position = Vector2(800, 342)
+position = Vector2(1473, 400)
 
-[node name="mouseexefolder" parent="." instance=ExtResource("5_dwbse")]
-position = Vector2(355, 541)
+[node name="mouseexefolder" parent="." instance=ExtResource("5_036b0")]
+position = Vector2(2712, 734)
+
+[node name="lore1 txt" parent="." instance=ExtResource("6_dwbse")]
+position = Vector2(536, 504)
