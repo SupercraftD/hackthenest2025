@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var cursorProj : PackedScene
 
 @onready var dustParticles = $dust
-var speed = 50
+var speed = 150
 
 func _physics_process(delta):
 	
