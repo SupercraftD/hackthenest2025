@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var bar = $CanvasLayer/TextureProgressBar
 var hp = 100
 var maxhp = hp
 
@@ -11,6 +12,9 @@ var maxhp = hp
 var speed = 50
 var started = false
 func start():
+	$CanvasLayer/TextureProgressBar.visible = true
+	bar.max_value = maxhp
+	bar.value = hp
 	started = true
 	$Fireballtimer.start()
 	$Fireballtimer.timeout.connect(shootFireball)
@@ -20,6 +24,7 @@ func start():
 
 
 func _physics_process(delta: float) -> void:
+	bar.value = hp
 	if not started:
 		return
 	

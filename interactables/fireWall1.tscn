@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://1bapquncqcnh"]
+
+[ext_resource type="Script" uid="uid://cwmiu71hc8m5g" path="res://interactables/fire_wall_1.gd" id="1_pauhn"]
+[ext_resource type="Texture2D" uid="uid://i6yobcgwokpn" path="res://assets/txt file.png" id="2_sa5tb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8e27a"]
+size = Vector2(42, 28)
+
+[node name="fireWall1" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_pauhn")
+metadata/_custom_type_script = "uid://b2dkf3av4mhre"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8e27a")
+
+[node name="TxtFile" type="Sprite2D" parent="."]
+position = Vector2(-1, -1)
+texture = ExtResource("2_sa5tb")

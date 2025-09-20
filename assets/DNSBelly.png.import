@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1561gscxkntx"
-path="res://.godot/imported/spritesheet.png-76e0b916bc20d45ac6900db6e21d8a9e.ctex"
+uid="uid://cvxr754rg12pk"
+path="res://.godot/imported/DNSBelly.png-3276771bcdc1b111e4dc97b85929ce61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spritesheet.png"
-dest_files=["res://.godot/imported/spritesheet.png-76e0b916bc20d45ac6900db6e21d8a9e.ctex"]
+source_file="res://assets/DNSBelly.png"
+dest_files=["res://.godot/imported/DNSBelly.png-3276771bcdc1b111e4dc97b85929ce61.ctex"]
 
 [params]
 

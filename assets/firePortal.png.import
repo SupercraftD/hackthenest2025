@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1561gscxkntx"
-path="res://.godot/imported/spritesheet.png-76e0b916bc20d45ac6900db6e21d8a9e.ctex"
+uid="uid://w4hu85q1piey"
+path="res://.godot/imported/firePortal.png-2c6b2a573279d6614028f60ca0e4f595.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spritesheet.png"
-dest_files=["res://.godot/imported/spritesheet.png-76e0b916bc20d45ac6900db6e21d8a9e.ctex"]
+source_file="res://assets/firePortal.png"
+dest_files=["res://.godot/imported/firePortal.png-2c6b2a573279d6614028f60ca0e4f595.ctex"]
 
 [params]
 
