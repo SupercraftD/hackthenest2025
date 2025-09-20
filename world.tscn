@@ -1,16 +1,17 @@
-[gd_scene load_steps=12 format=4 uid="uid://doax7n2lmx0wm"]
+[gd_scene load_steps=13 format=4 uid="uid://doax7n2lmx0wm"]
 
 [ext_resource type="Texture2D" uid="uid://b4b05y6ibi0q1" path="res://assets/tutorialbg.png" id="1_fj7yv"]
 [ext_resource type="TileSet" uid="uid://bo8xvbdjcm26w" path="res://assets/tileset.tres" id="2_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://1eccyxdcm8i5" path="res://player.tscn" id="3_tlwt5"]
-[ext_resource type="PackedScene" path="res://bug.tscn" id="4_aqk2v"]
-[ext_resource type="PackedScene" path="res://interactables/mouseexefolder.tscn" id="5_036b0"]
-[ext_resource type="PackedScene" uid="uid://73bnbv4qcwo4" path="res://interactables/lore1.tscn" id="6_dwbse"]
-[ext_resource type="PackedScene" uid="uid://ctwxcet42mvxn" path="res://interactables/sign 1.tscn" id="7_pkg7o"]
-[ext_resource type="PackedScene" uid="uid://ws4o1q0in08p" path="res://interactables/secret1.tscn" id="8_gbfbk"]
-[ext_resource type="PackedScene" uid="uid://1bapquncqcnh" path="res://interactables/fireWall1.tscn" id="9_wse8f"]
-[ext_resource type="PackedScene" uid="uid://bhcg7yndgkspv" path="res://interactables/fireWall2.tscn" id="10_ic0uy"]
-[ext_resource type="PackedScene" uid="uid://b8blbdsxsdgys" path="res://interactables/PortalEnter 1.tscn" id="11_ic0uy"]
+[ext_resource type="PackedScene" uid="uid://cmaurlqpnj371" path="res://bug.tscn" id="4_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://b12alv8jkih7h" path="res://interactables/mouseexefolder.tscn" id="5_036b0"]
+[ext_resource type="PackedScene" path="res://interactables/lore1.tscn" id="6_dwbse"]
+[ext_resource type="PackedScene" path="res://interactables/sign 1.tscn" id="7_pkg7o"]
+[ext_resource type="PackedScene" path="res://interactables/secret1.tscn" id="8_gbfbk"]
+[ext_resource type="PackedScene" path="res://interactables/fireWall1.tscn" id="9_wse8f"]
+[ext_resource type="PackedScene" path="res://interactables/fireWall2.tscn" id="10_ic0uy"]
+[ext_resource type="PackedScene" path="res://interactables/PortalEnter 1.tscn" id="11_ic0uy"]
+[ext_resource type="PackedScene" uid="uid://dr1il6sc1imu8" path="res://fire_spirit.tscn" id="12_k3n1d"]
 
 [node name="world" type="Node2D"]
 texture_filter = 1
@@ -58,3 +59,15 @@ position = Vector2(4659, 850)
 
 [node name="Portal Enter" parent="." instance=ExtResource("11_ic0uy")]
 position = Vector2(5618, 520)
+
+[node name="FireSpirit" parent="." instance=ExtResource("12_k3n1d")]
+position = Vector2(5045, 71)
+
+[node name="FireSpirit2" parent="." instance=ExtResource("12_k3n1d")]
+position = Vector2(5440, 384)
+
+[node name="FireSpirit3" parent="." instance=ExtResource("12_k3n1d")]
+position = Vector2(5057, 946)
+
+[node name="FireSpirit4" parent="." instance=ExtResource("12_k3n1d")]
+position = Vector2(5215, 572)
