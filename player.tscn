@@ -52,3 +52,8 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4flbx")
 animation = &"run"
 frame_progress = 0.8521962
+
+[node name="hurtBox" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hurtBox"]
+polygon = PackedVector2Array(-10, -14, -10, 0, -8, 2, -7, 12, -5, 14, 5, 14, 6, 3, 9, 1, 10, -14, 6, -16, -9, -16)
