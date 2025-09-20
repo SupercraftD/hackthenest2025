@@ -56,7 +56,7 @@ func move():
 	
 	if Input.is_action_just_pressed("roll") and roll.canRoll:
 		isRolling = true
-		rollVector = (get_global_mouse_position()-global_position).normalized() * rollSpeed
+		rollVector = velocity.normalized()* rollSpeed
 		$AnimatedSprite2D.play("roll")
 		roll.startRoll(.4)
 		await roll.rollDone
