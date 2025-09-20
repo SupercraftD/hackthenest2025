@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://doax7n2lmx0wm"]
+[gd_scene load_steps=14 format=4 uid="uid://doax7n2lmx0wm"]
 
 [ext_resource type="Texture2D" uid="uid://b4b05y6ibi0q1" path="res://assets/tutorialbg.png" id="1_fj7yv"]
 [ext_resource type="TileSet" uid="uid://bo8xvbdjcm26w" path="res://assets/tileset.tres" id="2_tlwt5"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" path="res://interactables/fireWall1.tscn" id="9_wse8f"]
 [ext_resource type="PackedScene" path="res://interactables/fireWall2.tscn" id="10_ic0uy"]
 [ext_resource type="PackedScene" path="res://interactables/PortalEnter 1.tscn" id="11_ic0uy"]
+[ext_resource type="PackedScene" path="res://fire_spirit.tscn" id="12_k3n1d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ic0uy"]
 bg_color = Color(0, 0, 0, 1)
@@ -70,3 +71,15 @@ offset_right = 1392.0
 offset_bottom = 891.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ic0uy")
+
+[node name="FireSpirit" parent="." instance=ExtResource("12_k3n1d")]
+position = Vector2(5129, 659)
+
+[node name="FireSpirit2" parent="." instance=ExtResource("12_k3n1d")]
+position = Vector2(5191, 499)
+
+[node name="FireSpirit3" parent="." instance=ExtResource("12_k3n1d")]
+position = Vector2(4968, 443)
+
+[node name="FireSpirit4" parent="." instance=ExtResource("12_k3n1d")]
+position = Vector2(5108, 269)
