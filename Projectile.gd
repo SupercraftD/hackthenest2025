@@ -1,5 +1,7 @@
 class_name Projectile extends CharacterBody2D
 
+signal done
+
 @export var SPEED = 800
 @export var dmg = 10
 
@@ -20,7 +22,7 @@ func _physics_process(delta: float) -> void:
 		if onlyCollidingWithParent:
 			return
 		
-		
+		emit_signal("done")
 		queue_free()
 		
 		

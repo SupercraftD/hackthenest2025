@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var dustParticles = $dust
 var speed = 150
 
+var canShoot = true
+
 func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("roll"):
@@ -30,8 +32,14 @@ func _physics_process(delta):
 
 
 func shoot():
-	var p = cursorProj.instantiate()
-	p.global_position = global_position
-	p.look_at(get_global_mouse_position())
-	p.shooter = self
-	get_parent().add_child(p)
+	if canShoot:
+		canShoot = false
+		
+		var p = cursorProj.instantiate()
+		p.global_position = global_position
+		p.look_at(get_global_mouse_position())
+		p.shooter = self
+		get_parent().add_child(p)
+		
+		await p.done
+		canShoot = true

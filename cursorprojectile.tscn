@@ -4,17 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://d30q3p4k1bt8d" path="res://assets/cursor.png" id="2_jpt21"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpt21"]
-size = Vector2(23, 10)
+size = Vector2(13, 6)
 
 [node name="Projectile" type="CharacterBody2D"]
-collision_layer = 0
+position = Vector2(-2, 0)
 script = ExtResource("1_amubf")
+SPEED = 300
 metadata/_custom_type_script = "uid://d0dopo8sb713a"
 
 [node name="Cursor" type="Sprite2D" parent="."]
-position = Vector2(-2.0000007, 3.9999993)
+position = Vector2(0.9999981, 2.000002)
 rotation = 2.0015368
-scale = Vector2(0.054166667, 0.054166667)
+scale = Vector2(0.027989358, 0.027989358)
 texture = ExtResource("2_jpt21")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
