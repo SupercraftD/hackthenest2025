@@ -28,7 +28,7 @@ tile_set = ExtResource("2_tlwt5")
 position = Vector2(251, 495)
 
 [node name="Bug" parent="." instance=ExtResource("4_aqk2v")]
-position = Vector2(777, 424)
+position = Vector2(2791, 419)
 
 [node name="lore1 txt" parent="." instance=ExtResource("6_dwbse")]
 position = Vector2(536, 504)
