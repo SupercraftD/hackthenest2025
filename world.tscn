@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b4b05y6ibi0q1" path="res://assets/tutorialbg.png" id="1_fj7yv"]
 [ext_resource type="TileSet" uid="uid://bo8xvbdjcm26w" path="res://assets/tileset.tres" id="2_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://1eccyxdcm8i5" path="res://player.tscn" id="3_tlwt5"]
-[ext_resource type="PackedScene" uid="uid://cmaurlqpnj371" path="res://bug.tscn" id="4_aqk2v"]
+[ext_resource type="PackedScene" path="res://bug.tscn" id="4_aqk2v"]
 
 [node name="world" type="Node2D"]
 texture_filter = 1
