@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu1y4w3igfgwb"]
+
+[ext_resource type="Script" uid="uid://d0dopo8sb713a" path="res://Projectile.gd" id="1_amubf"]
+[ext_resource type="Texture2D" uid="uid://d30q3p4k1bt8d" path="res://assets/cursor.png" id="2_jpt21"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpt21"]
+size = Vector2(23, 10)
+
+[node name="Projectile" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_amubf")
+metadata/_custom_type_script = "uid://d0dopo8sb713a"
+
+[node name="Cursor" type="Sprite2D" parent="."]
+position = Vector2(-2.0000007, 3.9999993)
+rotation = 2.0015368
+scale = Vector2(0.054166667, 0.054166667)
+texture = ExtResource("2_jpt21")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 0)
+shape = SubResource("RectangleShape2D_jpt21")
