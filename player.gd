@@ -89,7 +89,7 @@ func shoot():
 		p.look_at(get_global_mouse_position())
 		p.shooter = self
 		get_parent().add_child(p)
-		
+		$Camera2D.start_shake(8.0, 0.5)
 		await p.done
 		canShoot = true
 
