@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dyofcy7xa8g68"]
+
+[node name="fireWall" type="CharacterBody2D"]
+
+[node name="flamethrower" type="AnimatedSprite2D" parent="."]
