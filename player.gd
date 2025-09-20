@@ -50,7 +50,8 @@ func move():
 		return
 	
 	if Input.is_action_just_pressed("roll"):
-		roll.startRoll(2)
+		$AnimatedSprite2D.play("roll")
+		roll.startRoll(.4)
 	
 	if abs(velocity.x) > 0.1:
 		dustParticles.emitting = true
