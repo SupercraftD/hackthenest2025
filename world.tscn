@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://bo8xvbdjcm26w" path="res://assets/tileset.tres" id="2_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://1eccyxdcm8i5" path="res://player.tscn" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://cmaurlqpnj371" path="res://bug.tscn" id="4_aqk2v"]
+
 [ext_resource type="PackedScene" uid="uid://b12alv8jkih7h" path="res://interactables/mouseexefolder.tscn" id="5_036b0"]
 [ext_resource type="PackedScene" path="res://interactables/lore1.tscn" id="6_dwbse"]
 
