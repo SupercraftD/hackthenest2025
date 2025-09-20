@@ -1,11 +1,22 @@
 extends CharacterBody2D
 
-var speed = 400
+@onready var roll = $Roll
+@onready var dustParticles = $dust
+var speed = 50
 
 func _physics_process(delta):
 	
-	velocity = Input.get_vector("left","right","up","down") * speed
+	if Input.is_action_just_pressed("roll"):
+		roll.startRoll(2)
 	
+	if abs(velocity.x) > 0.1:
+		dustParticles.emitting = true
+		dustParticles.position.x = -16 * sign(velocity.x)
+	
+	velocity = Input.get_vector("left","right","up","down") * speed
 	move_and_slide()
 	
-	
+	if (velocity == Vector2.ZERO):
+		$AnimatedSprite2D.play("idle")
+	else:
+		$AnimatedSprite2D.play("run")
