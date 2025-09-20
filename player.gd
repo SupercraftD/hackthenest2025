@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var roll = $Roll
-@onready var hpbar = $hpbar
+@onready var hpbar = $CanvasLayer/hpbar
 
 @export var weaponProjectiles = {
 	"mouse":preload("res://projectiles/cursorprojectile.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://1eccyxdcm8i5"]
+[gd_scene load_steps=29 format=3 uid="uid://1eccyxdcm8i5"]
 
 [ext_resource type="Script" uid="uid://sm40qmo2rdgy" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://jah366jyakid" path="res://assets/idle.png" id="3_1jxqw"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://b1wsymee5q140" path="res://dialoguepopup.gd" id="9_nvl01"]
 [ext_resource type="Texture2D" uid="uid://pcjfhvdms82i" path="res://assets/outsideSTM.png" id="10_nvl01"]
 [ext_resource type="Texture2D" uid="uid://ctc6gwp7u772u" path="res://assets/insideSTM.png" id="11_ivps1"]
+[ext_resource type="Texture2D" uid="uid://dq18vwj26wsrd" path="res://assets/insideHealth.png" id="12_ivps1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
 size = Vector2(24, 34)
@@ -204,15 +205,22 @@ text = ">"
 
 [node name="stambar" type="TextureProgressBar" parent="CanvasLayer"]
 texture_filter = 1
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 12.0
+offset_top = -20.0
+offset_right = 338.0
+offset_bottom = 306.0
 value = 50.0
+nine_patch_stretch = true
 texture_over = ExtResource("10_nvl01")
 texture_progress = ExtResource("11_ivps1")
 
-[node name="hpbar" type="ProgressBar" parent="."]
-offset_left = -29.0
-offset_top = -27.0
-offset_right = 32.0
-offset_bottom = -20.0
-show_percentage = false
+[node name="hpbar" type="TextureProgressBar" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 9.0
+offset_top = -100.0
+offset_right = 529.0
+offset_bottom = 245.0
+value = 50.0
+nine_patch_stretch = true
+texture_over = ExtResource("10_nvl01")
+texture_progress = ExtResource("12_ivps1")
