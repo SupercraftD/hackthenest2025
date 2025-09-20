@@ -4,6 +4,8 @@ extends CharacterBody2D
 var hp = 100
 var maxhp = hp
 
+signal dead
+
 
 @export var fireballProj : PackedScene
 @export var geyser : PackedScene
@@ -43,6 +45,14 @@ func _physics_process(delta: float) -> void:
 	
 	if hp < 0.5*maxhp and $geysertimer.is_stopped():
 		$geysertimer.start()
+	
+	if hp <= 0:
+		die()
+
+func die():
+	emit_signal("dead")
+	await player.promptDialogue("[b]Firewall: [/b]You may have overridden the firewall... but you'll never get past the DNS!")
+	queue_free()
 
 func hurt(dmg, atk):
 	hp -= dmg
@@ -87,5 +97,5 @@ func spawnGeyser():
 	g.global_position = Vector2(player.global_position.x+randi_range(-50,50),spot.global_position.y)
 	if spot == $bottom:
 		g.global_rotation_degrees = 180
-	
+	get_parent().geysers.append(g)
 	get_parent().add_child(g)
