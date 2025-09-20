@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq3ds3s4rguwq"
-path="res://.godot/imported/firewall.png-1c76cb68a289d0e0a7c860527d8f226e.ctex"
+uid="uid://da1rlu82o5a8e"
+path="res://.godot/imported/pixil-frame-0 (4).png-75e3618916635664201450310f910f85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/firewall.png"
-dest_files=["res://.godot/imported/firewall.png-1c76cb68a289d0e0a7c860527d8f226e.ctex"]
+source_file="res://assets/pixil-frame-0 (4).png"
+dest_files=["res://.godot/imported/pixil-frame-0 (4).png-75e3618916635664201450310f910f85.ctex"]
 
 [params]
 
