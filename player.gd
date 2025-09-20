@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
 @onready var roll = $Roll
-@export var cursorProj : PackedScene
 @onready var hpbar = $hpbar
+
+@export var weaponProjectiles = {
+	"mouse":preload("res://projectiles/cursorprojectile.tscn")
+}
 
 var rollSpeed = 400
 var rollVector = Vector2()
@@ -54,7 +57,7 @@ func move():
 	if inDialogue:
 		return
 	
-	if Input.is_action_just_pressed("roll") and roll.canRoll:
+	if Input.is_action_just_pressed("roll") and roll.canRoll and not isRolling:
 		isRolling = true
 		rollVector = velocity.normalized()* rollSpeed
 		$AnimatedSprite2D.play("roll")
@@ -81,15 +84,27 @@ func interact():
 
 
 func shoot():
+	
+	if GameInfo.weapon == -1:
+		return
+	
+	var weapon = GameInfo.availableWeapons[GameInfo.weapon]
+	
+	var proj = weaponProjectiles[weapon]
+	
 	if canShoot and not isRolling:
 		canShoot = false
 		
-		var p = cursorProj.instantiate()
+		var p = proj.instantiate()
+		
 		p.global_position = global_position
 		p.look_at(get_global_mouse_position())
+		
 		p.shooter = self
 		get_parent().add_child(p)
+		
 		$Camera2D.start_shake(8.0, 0.5)
+		
 		await p.done
 		canShoot = true
 
