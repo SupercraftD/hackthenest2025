@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bp61i6rifdbox"]
+[gd_scene load_steps=7 format=3 uid="uid://be2xawgv5a8sx"]
 
 [ext_resource type="Script" uid="uid://7mmlwsvcmbno" path="res://dnsworld/worm.gd" id="1_kp41u"]
 [ext_resource type="PackedScene" uid="uid://c02q82psvlwr1" path="res://projectiles/acidspit.tscn" id="2_2b6gk"]
