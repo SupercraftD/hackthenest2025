@@ -28,6 +28,7 @@ var isRolling = false
 var canHurt = true
 
 func _ready():
+	$flamegeyser/flamegeyser.playerSpawned = true
 	hpbar.max_value = hp
 	hpbar.value = hp
 
@@ -62,8 +63,24 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
 	
+	if Input.is_action_just_pressed("special") and "flamethrower" in GameInfo.availableWeapons:
+		special()
+	
 	if Input.is_action_just_pressed("interact"):
 		interact()
+	
+
+var canSpecial = true
+func special():
+	
+	if canSpecial:
+		canSpecial = false
+		$flamegeyser.visible = true
+		$flamegeyser.look_at(get_global_mouse_position())
+		await $flamegeyser/flamegeyser.start()
+		$flamegeyser.visible = false
+		await get_tree().create_timer(1).timeout
+		canSpecial = true
 
 func move():
 	if inDialogue or dead:
@@ -101,9 +118,8 @@ func shoot():
 	if inDialogue or GameInfo.weapon == -1:
 		return
 	
-	var weapon = GameInfo.availableWeapons[GameInfo.weapon]
 	
-	var proj = weaponProjectiles[weapon]
+	var proj = weaponProjectiles["mouse"]
 	
 	if canShoot and not isRolling:
 		canShoot = false
@@ -122,7 +138,7 @@ func shoot():
 		canShoot = true
 
 func hurt(dmg, atk):
-	if canHurt and not isRolling:
+	if canHurt and not isRolling and atk != $flamegeyser/flamegeyser:
 		hp -= dmg
 		canHurt = false
 		await get_tree().create_timer(0.5).timeout
