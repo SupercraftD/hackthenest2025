@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bjvfqpvrgavwn" path="res://assets/purple tile.png" id="4_3eql8"]
 [ext_resource type="PackedScene" uid="uid://1eccyxdcm8i5" path="res://player.tscn" id="4_d7tfw"]
 [ext_resource type="Texture2D" uid="uid://bwfrroknhmtxk" path="res://assets/darkPurple tile.png" id="5_rfo8g"]
-[ext_resource type="PackedScene" uid="uid://dlicb2wrl7fgx" path="res://dnsworld/stickman.tscn" id="5_s236q"]
-[ext_resource type="PackedScene" path="res://interactables/lore2.tscn" id="7_rfo8g"]
-[ext_resource type="PackedScene" uid="uid://be2xawgv5a8sx" path="res://dnsworld/worm.tscn" id="9_kyd23"]
+[ext_resource type="PackedScene" path="res://dnsworld/stickman.tscn" id="5_s236q"]
+[ext_resource type="PackedScene" uid="uid://ceij0u5ufcj5q" path="res://interactables/lore2.tscn" id="7_rfo8g"]
+[ext_resource type="PackedScene" path="res://dnsworld/worm.tscn" id="9_kyd23"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s236q"]
 texture = ExtResource("2_cfxke")
@@ -66,7 +66,7 @@ position = Vector2(157, 409)
 position = Vector2(504, 527)
 
 [node name="worm" parent="." instance=ExtResource("9_kyd23")]
-position = Vector2(656, 532)
+position = Vector2(641, 484)
 
 [node name="Stickman2" parent="." instance=ExtResource("5_s236q")]
 position = Vector2(1719, 399)
