@@ -138,8 +138,10 @@ func shoot():
 		canShoot = true
 
 func hurt(dmg, atk):
+
 	if canHurt and not isRolling and atk != $flamegeyser/flamegeyser:
 		hp -= dmg
+		$Camera2D.start_shake(2.0, 0.3)
 		canHurt = false
 		await get_tree().create_timer(0.5).timeout
 		canHurt = true
