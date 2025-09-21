@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 func explode():
 	$acid.play("explode")
 	$CollisionShape2D.disabled = true
-	
+	isDead = true
 	await $acid.animation_finished
 	emit_signal("done")
 	queue_free()
