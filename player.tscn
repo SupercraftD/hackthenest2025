@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://pfyjw8n0bcli" path="res://roll.tscn" id="4_hqtel"]
 [ext_resource type="Texture2D" uid="uid://cqbayvbks4kw8" path="res://assets/shooting.png" id="5_dw050"]
 [ext_resource type="PackedScene" uid="uid://s6psh0ipc6ds" path="res://dust.tscn" id="5_sweqy"]
-[ext_resource type="Script" uid="uid://b1wsymee5q140" path="res://dialoguepopup.gd" id="9_nvl01"]
+[ext_resource type="Script" path="res://dialoguepopup.gd" id="9_nvl01"]
 [ext_resource type="Texture2D" uid="uid://pcjfhvdms82i" path="res://assets/outsideSTM.png" id="10_nvl01"]
 [ext_resource type="Texture2D" uid="uid://ctc6gwp7u772u" path="res://assets/insideSTM.png" id="11_ivps1"]
 [ext_resource type="Texture2D" uid="uid://dq18vwj26wsrd" path="res://assets/insideHealth.png" id="12_ivps1"]

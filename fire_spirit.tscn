@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dr1il6sc1imu8"]
+[gd_scene load_steps=15 format=3 uid="uid://c2wgvenio1oty"]
 
 [ext_resource type="Script" uid="uid://dm7pcmluyy15v" path="res://fire_spirit.gd" id="1_7atee"]
 [ext_resource type="Texture2D" uid="uid://b6s8vtge6m2f1" path="res://assets/Wispy1.png" id="1_wyx78"]
