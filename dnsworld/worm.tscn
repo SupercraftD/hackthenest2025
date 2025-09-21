@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://be2xawgv5a8sx"]
+[gd_scene load_steps=6 format=3 uid="uid://be2xawgv5a8sx"]
 
-[ext_resource type="Script" uid="uid://dac2mtlblgmna" path="res://dnsworld/stickman.gd" id="1_kp41u"]
-[ext_resource type="PackedScene" uid="uid://c02q82psvlwr1" path="res://projectiles/acidspit.tscn" id="2_2b6gk"]
+[ext_resource type="Script" uid="uid://7mmlwsvcmbno" path="res://dnsworld/worm.gd" id="1_kp41u"]
 [ext_resource type="Texture2D" path="res://assets/pixil-frame-0 (1).png" id="2_kp41u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c761e"]
@@ -17,7 +16,6 @@ radius = 181.06905
 [node name="worm" type="CharacterBody2D"]
 collision_mask = 3
 script = ExtResource("1_kp41u")
-acidspit = ExtResource("2_2b6gk")
 
 [node name="AnimatedSprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
