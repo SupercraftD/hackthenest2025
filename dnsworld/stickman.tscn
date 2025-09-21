@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlicb2wrl7fgx"]
+
+[ext_resource type="Script" uid="uid://dac2mtlblgmna" path="res://dnsworld/stickman.gd" id="1_2nlr3"]
+[ext_resource type="Texture2D" uid="uid://b7had8kjqeyjr" path="res://assets/pixilart-drawing (1).png" id="2_qlce8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c761e"]
+radius = 252.28555
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c761e"]
+radius = 14.0
+height = 70.0
+
+[node name="Stickman" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_2nlr3")
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8.5, 8.5)
+scale = Vector2(1.17, 1.17)
+texture = ExtResource("2_qlce8")
+
+[node name="Sight" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight"]
+shape = SubResource("CircleShape2D_c761e")
+
+[node name="hurtBox" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_c761e")

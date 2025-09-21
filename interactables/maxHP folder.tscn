@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://7qrjsahmysy3"]
+
+[ext_resource type="Script" uid="uid://cf17ldqjn118b" path="res://interactables/max_hp_folder.gd" id="1_8s0l1"]
+[ext_resource type="Texture2D" uid="uid://megv52h35wen" path="res://assets/folder.png" id="2_0g1hg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8e27a"]
+size = Vector2(42, 28)
+
+[node name="maxHPFolder" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_8s0l1")
+metadata/_custom_type_script = "uid://b2dkf3av4mhre"
+
+[node name="Folder" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 1)
+texture = ExtResource("2_0g1hg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8e27a")

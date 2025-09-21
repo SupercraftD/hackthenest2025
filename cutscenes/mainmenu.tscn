@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://posin4732nmn"]
+
+[ext_resource type="Texture2D" uid="uid://c47ulopgaxckm" path="res://assets/player.png" id="1_a8r76"]
+[ext_resource type="Script" uid="uid://bra23bkqjlrhb" path="res://cutscenes/mainmenu.gd" id="1_mmrnh"]
+[ext_resource type="Texture2D" uid="uid://d30q3p4k1bt8d" path="res://assets/cursor.png" id="2_mmrnh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71h8q"]
+bg_color = Color(0.46266174, 0.6435235, 0.60497254, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8r76"]
+bg_color = Color(0.83253586, 0.50617576, 0.3326647, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+
+[node name="mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mmrnh")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1172.0
+offset_bottom = 666.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_71h8q")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 245.0
+theme_override_font_sizes/font_size = 100
+text = "For Your Own Safety"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(227, 412.99997)
+scale = Vector2(15.333338, 15.333335)
+texture = ExtResource("1_a8r76")
+
+[node name="Cursor" type="Sprite2D" parent="."]
+position = Vector2(984, 432.9999)
+scale = Vector2(0.42833334, 0.42833334)
+texture = ExtResource("2_mmrnh")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 258.0
+offset_right = 776.0
+offset_bottom = 371.0
+theme_override_font_sizes/font_size = 48
+text = "Start"
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 427.0
+offset_right = 806.0
+offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a8r76")
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 0
+offset_right = 425.0
+offset_bottom = 217.0
+theme_override_font_sizes/font_size = 20
+text = "CONTROLS
+
+WASD - move
+Space/LeftClick - attack
+F - special
+Shift/RightClick - roll
+E - interact"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

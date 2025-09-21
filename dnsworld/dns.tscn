@@ -1,0 +1,295 @@
+[gd_scene load_steps=25 format=3 uid="uid://d21443k2xx266"]
+
+[ext_resource type="Texture2D" uid="uid://cvxr754rg12pk" path="res://assets/DNSBelly.png" id="1_6jp26"]
+[ext_resource type="Script" uid="uid://usqg5o15ua1j" path="res://dnsworld/dns.gd" id="1_34ru7"]
+[ext_resource type="Texture2D" uid="uid://cm05q2whi3v2w" path="res://assets/DNSIdle.png" id="1_asvvf"]
+[ext_resource type="Texture2D" uid="uid://sbqnelpu77f1" path="res://assets/yellow laser.png" id="4_k12y0"]
+[ext_resource type="Script" uid="uid://b0hv6hjok1gng" path="res://dnsworld/undamged_lasers.gd" id="4_qio6r"]
+[ext_resource type="Script" uid="uid://v0nyeu8x2gak" path="res://dnsworld/damaged_lasers.gd" id="6_qio6r"]
+[ext_resource type="Texture2D" uid="uid://bl1rbjs745g5k" path="res://assets/DNSOutside.png" id="7_m44ws"]
+[ext_resource type="Texture2D" uid="uid://dvlb2ssxlpydo" path="res://assets/DNSInside.png" id="8_raajq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slslt"]
+atlas = ExtResource("1_6jp26")
+region = Rect2(0, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i83bf"]
+atlas = ExtResource("1_6jp26")
+region = Rect2(151, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldkv1"]
+atlas = ExtResource("1_6jp26")
+region = Rect2(302, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24m3m"]
+atlas = ExtResource("1_6jp26")
+region = Rect2(453, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6khj"]
+atlas = ExtResource("1_6jp26")
+region = Rect2(604, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6n45"]
+atlas = ExtResource("1_6jp26")
+region = Rect2(755, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jp26"]
+atlas = ExtResource("1_asvvf")
+region = Rect2(0, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiu4q"]
+atlas = ExtResource("1_asvvf")
+region = Rect2(151, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34ru7"]
+atlas = ExtResource("1_asvvf")
+region = Rect2(302, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k12y0"]
+atlas = ExtResource("1_asvvf")
+region = Rect2(453, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qio6r"]
+atlas = ExtResource("1_asvvf")
+region = Rect2(604, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bfkm"]
+atlas = ExtResource("1_asvvf")
+region = Rect2(755, 0, 151, 151)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_slslt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slslt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i83bf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldkv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24m3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6khj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6n45")
+}],
+"loop": false,
+"name": &"bellyLaser",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jp26")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fiu4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34ru7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k12y0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qio6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bfkm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k12y0"]
+size = Vector2(59.067307, 10.909088)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qio6r"]
+size = Vector2(32.000004, 68.66667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m44ws"]
+size = Vector2(634, 47.333336)
+
+[node name="DNS" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_34ru7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_slslt")
+
+[node name="undamgedLasers" type="Node2D" parent="."]
+script = ExtResource("4_qio6r")
+
+[node name="pivot2" type="Marker2D" parent="undamgedLasers"]
+position = Vector2(0, -40)
+
+[node name="laser" type="Sprite2D" parent="undamgedLasers/pivot2"]
+visible = false
+texture_filter = 1
+position = Vector2(454.99997, 0)
+scale = Vector2(15.423079, 0.36666667)
+texture = ExtResource("4_k12y0")
+
+[node name="Area2D" type="Area2D" parent="undamgedLasers/pivot2/laser"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="undamgedLasers/pivot2/laser/Area2D"]
+position = Vector2(-0.032411575, 0)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_k12y0")
+disabled = true
+
+[node name="pivot1" type="Marker2D" parent="undamgedLasers"]
+position = Vector2(9, -41)
+
+[node name="laser" type="Sprite2D" parent="undamgedLasers/pivot1"]
+visible = false
+texture_filter = 1
+position = Vector2(454.99997, 0)
+scale = Vector2(15.423079, 0.36666667)
+texture = ExtResource("4_k12y0")
+
+[node name="Area2D" type="Area2D" parent="undamgedLasers/pivot1/laser"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="undamgedLasers/pivot1/laser/Area2D"]
+position = Vector2(-0.032411575, 0)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_k12y0")
+disabled = true
+
+[node name="pivot3" type="Marker2D" parent="undamgedLasers"]
+position = Vector2(-6, -35)
+
+[node name="laser" type="Sprite2D" parent="undamgedLasers/pivot3"]
+visible = false
+texture_filter = 1
+position = Vector2(454.99997, 0)
+scale = Vector2(15.423079, 0.36666667)
+texture = ExtResource("4_k12y0")
+
+[node name="Area2D" type="Area2D" parent="undamgedLasers/pivot3/laser"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="undamgedLasers/pivot3/laser/Area2D"]
+position = Vector2(-0.032411575, 0)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_k12y0")
+disabled = true
+
+[node name="damagedLasers" type="Node2D" parent="."]
+script = ExtResource("6_qio6r")
+
+[node name="pivot1" type="Marker2D" parent="damagedLasers"]
+position = Vector2(-9, -41)
+
+[node name="laser" type="Sprite2D" parent="damagedLasers/pivot1"]
+visible = false
+texture_filter = 1
+position = Vector2(454.99997, 0)
+scale = Vector2(15.423079, 0.36666667)
+texture = ExtResource("4_k12y0")
+
+[node name="Area2D" type="Area2D" parent="damagedLasers/pivot1/laser"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damagedLasers/pivot1/laser/Area2D"]
+position = Vector2(-0.032411575, 0)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_k12y0")
+disabled = true
+
+[node name="pivot2" type="Marker2D" parent="damagedLasers"]
+position = Vector2(6, -35)
+
+[node name="laser" type="Sprite2D" parent="damagedLasers/pivot2"]
+visible = false
+texture_filter = 1
+position = Vector2(453.99997, 0)
+scale = Vector2(15.423079, 0.36666667)
+texture = ExtResource("4_k12y0")
+
+[node name="Area2D" type="Area2D" parent="damagedLasers/pivot2/laser"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damagedLasers/pivot2/laser/Area2D"]
+position = Vector2(-0.032411575, 0)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_k12y0")
+disabled = true
+
+[node name="pivot3" type="Marker2D" parent="damagedLasers"]
+position = Vector2(0, -30)
+
+[node name="laser" type="Sprite2D" parent="damagedLasers/pivot3"]
+visible = false
+texture_filter = 1
+position = Vector2(455.99997, 0)
+scale = Vector2(15.423079, 0.36666667)
+texture = ExtResource("4_k12y0")
+
+[node name="Area2D" type="Area2D" parent="damagedLasers/pivot3/laser"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damagedLasers/pivot3/laser/Area2D"]
+position = Vector2(-0.032411575, 0)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_k12y0")
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.75
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.66666764, -13.000003)
+shape = SubResource("RectangleShape2D_qio6r")
+
+[node name="spawntimer" type="Timer" parent="."]
+wait_time = 12.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+offset_left = 134.0
+offset_top = 431.0
+offset_right = 1009.0
+offset_bottom = 602.0
+mouse_filter = 2
+value = 50.0
+nine_patch_stretch = true
+texture_over = ExtResource("7_m44ws")
+texture_progress = ExtResource("8_raajq")
+
+[node name="bellyLaser" type="Area2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+collision_layer = 3
+collision_mask = 3
+
+[node name="YellowLaser" type="Sprite2D" parent="bellyLaser"]
+texture_filter = 1
+position = Vector2(324.25, 0.33333826)
+scale = Vector2(11.023077, 4.4000006)
+texture = ExtResource("4_k12y0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bellyLaser"]
+position = Vector2(326.58337, 1.6666694)
+shape = SubResource("RectangleShape2D_m44ws")
+disabled = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="spawntimer" to="." method="_on_spawntimer_timeout"]

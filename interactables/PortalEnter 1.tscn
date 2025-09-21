@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8blbdsxsdgys"]
+
+[ext_resource type="Script" uid="uid://7rqawjc2byov" path="res://interactables/portal_enter_1.gd" id="1_g4fbm"]
+[ext_resource type="Texture2D" uid="uid://w4hu85q1piey" path="res://assets/firePortal.png" id="2_g4fbm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcjbi"]
+size = Vector2(127, 148)
+
+[node name="Portal Enter 1" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_g4fbm")
+metadata/_custom_type_script = "uid://b2dkf3av4mhre"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -3)
+shape = SubResource("RectangleShape2D_vcjbi")
+
+[node name="FirePortal" type="Sprite2D" parent="."]
+position = Vector2(-0.9999466, 0)
+scale = Vector2(4.441919, 4.2397957)
+texture = ExtResource("2_g4fbm")
