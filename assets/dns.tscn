@@ -1,7 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://y3ncxph86plk"]
+[gd_scene load_steps=21 format=3 uid="uid://y3ncxph86plk"]
 
 [ext_resource type="Texture2D" uid="uid://cvxr754rg12pk" path="res://assets/DNSBelly.png" id="1_6jp26"]
+[ext_resource type="Script" uid="uid://usqg5o15ua1j" path="res://assets/dns.gd" id="1_34ru7"]
 [ext_resource type="Texture2D" uid="uid://cm05q2whi3v2w" path="res://assets/DNSIdle.png" id="1_asvvf"]
+[ext_resource type="Texture2D" uid="uid://sbqnelpu77f1" path="res://assets/yellow laser.png" id="4_k12y0"]
+[ext_resource type="Script" uid="uid://b0hv6hjok1gng" path="res://assets/undamged_lasers.gd" id="4_qio6r"]
+[ext_resource type="Script" uid="uid://v0nyeu8x2gak" path="res://assets/damaged_lasers.gd" id="6_qio6r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_slslt"]
 atlas = ExtResource("1_6jp26")
@@ -100,9 +104,134 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k12y0"]
+size = Vector2(59.067307, 10.909088)
+
 [node name="DNS" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_34ru7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_slslt")
-frame_progress = 0.2749611
+animation = &"bellyLaser"
+
+[node name="undamgedLasers" type="Node2D" parent="."]
+script = ExtResource("4_qio6r")
+
+[node name="pivot2" type="Marker2D" parent="undamgedLasers"]
+position = Vector2(0, -40)
+
+[node name="laser" type="Sprite2D" parent="undamgedLasers/pivot2"]
+visible = false
+texture_filter = 1
+position = Vector2(454.99997, 0)
+scale = Vector2(15.423079, 0.36666667)
+texture = ExtResource("4_k12y0")
+
+[node name="Area2D" type="Area2D" parent="undamgedLasers/pivot2/laser"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="undamgedLasers/pivot2/laser/Area2D"]
+position = Vector2(-0.032411575, 0)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_k12y0")
+disabled = true
+
+[node name="pivot1" type="Marker2D" parent="undamgedLasers"]
+position = Vector2(9, -41)
+
+[node name="laser" type="Sprite2D" parent="undamgedLasers/pivot1"]
+visible = false
+texture_filter = 1
+position = Vector2(454.99997, 0)
+scale = Vector2(15.423079, 0.36666667)
+texture = ExtResource("4_k12y0")
+
+[node name="Area2D" type="Area2D" parent="undamgedLasers/pivot1/laser"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="undamgedLasers/pivot1/laser/Area2D"]
+position = Vector2(-0.032411575, 0)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_k12y0")
+disabled = true
+
+[node name="pivot3" type="Marker2D" parent="undamgedLasers"]
+position = Vector2(-6, -35)
+
+[node name="laser" type="Sprite2D" parent="undamgedLasers/pivot3"]
+visible = false
+texture_filter = 1
+position = Vector2(454.99997, 0)
+scale = Vector2(15.423079, 0.36666667)
+texture = ExtResource("4_k12y0")
+
+[node name="Area2D" type="Area2D" parent="undamgedLasers/pivot3/laser"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="undamgedLasers/pivot3/laser/Area2D"]
+position = Vector2(-0.032411575, 0)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_k12y0")
+disabled = true
+
+[node name="damagedLasers" type="Node2D" parent="."]
+script = ExtResource("6_qio6r")
+
+[node name="pivot1" type="Marker2D" parent="damagedLasers"]
+position = Vector2(-9, -41)
+
+[node name="laser" type="Sprite2D" parent="damagedLasers/pivot1"]
+visible = false
+texture_filter = 1
+position = Vector2(454.99997, 0)
+scale = Vector2(15.423079, 0.36666667)
+texture = ExtResource("4_k12y0")
+
+[node name="Area2D" type="Area2D" parent="damagedLasers/pivot1/laser"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damagedLasers/pivot1/laser/Area2D"]
+position = Vector2(-0.032411575, 0)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_k12y0")
+disabled = true
+
+[node name="pivot2" type="Marker2D" parent="damagedLasers"]
+position = Vector2(6, -35)
+
+[node name="laser" type="Sprite2D" parent="damagedLasers/pivot2"]
+visible = false
+texture_filter = 1
+position = Vector2(453.99997, 0)
+scale = Vector2(15.423079, 0.36666667)
+texture = ExtResource("4_k12y0")
+
+[node name="Area2D" type="Area2D" parent="damagedLasers/pivot2/laser"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damagedLasers/pivot2/laser/Area2D"]
+position = Vector2(-0.032411575, 0)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_k12y0")
+disabled = true
+
+[node name="pivot3" type="Marker2D" parent="damagedLasers"]
+position = Vector2(0, -30)
+
+[node name="laser" type="Sprite2D" parent="damagedLasers/pivot3"]
+visible = false
+texture_filter = 1
+position = Vector2(455.99997, 0)
+scale = Vector2(15.423079, 0.36666667)
+texture = ExtResource("4_k12y0")
+
+[node name="Area2D" type="Area2D" parent="damagedLasers/pivot3/laser"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damagedLasers/pivot3/laser/Area2D"]
+position = Vector2(-0.032411575, 0)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_k12y0")
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
