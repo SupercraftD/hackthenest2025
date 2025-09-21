@@ -6,7 +6,7 @@ const SCALE = .367
 func shoot():
 	for pivot in get_children():
 		pivot.look_at(player.global_position)
-		await get_tree().create_timer(1.4).timeout
+		await get_tree().create_timer(.25).timeout
 		pivot.get_node("laser").visible = true
 		pivot.get_node("laser").get_node("Area2D").get_node("CollisionShape2D").disabled = false
 		var tween = create_tween()

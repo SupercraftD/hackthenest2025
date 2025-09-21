@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" path="res://interactables/fireWall2.tscn" id="10_ic0uy"]
 [ext_resource type="PackedScene" path="res://interactables/PortalEnter 1.tscn" id="11_ic0uy"]
 [ext_resource type="PackedScene" path="res://fire_spirit.tscn" id="12_k3n1d"]
-[ext_resource type="PackedScene" uid="uid://y3ncxph86plk" path="res://assets/dns.tscn" id="13_2o6r5"]
+[ext_resource type="PackedScene" uid="uid://d21443k2xx266" path="res://assets/dns.tscn" id="13_2o6r5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ic0uy"]
 bg_color = Color(0, 0, 0, 1)
@@ -70,6 +70,9 @@ offset_bottom = 891.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ic0uy")
 
+[node name="mouseexefolder" parent="CanvasLayer" instance=ExtResource("5_036b0")]
+position = Vector2(1627, 732)
+
 [node name="FireSpirit" parent="." instance=ExtResource("12_k3n1d")]
 position = Vector2(5129, 659)
 
@@ -105,9 +108,6 @@ position = Vector2(4651, 72)
 
 [node name="Bug9" parent="." instance=ExtResource("4_aqk2v")]
 position = Vector2(4803, 1082)
-
-[node name="mouseexefolder" parent="." instance=ExtResource("5_036b0")]
-position = Vector2(1628, 723)
 
 [node name="DNS" parent="." instance=ExtResource("13_2o6r5")]
 position = Vector2(444, 566)

@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
 @onready var hurtBox = $hurtBox
-@onready var player = $Player
+@onready var player
 @onready var sight : Area2D = $Sight
+@onready var range : Area2D = $range
 
-var hp = 2
+var hp = 4
 
-var speed: float = 50.0
+var speed: float = 100.0
 var wander_direction: Vector2 = Vector2.ZERO
 var wander_timer: float = 0.0
 var wander_interval: float = 2.0 # seconds before picking a new random direction
@@ -18,6 +19,16 @@ func _physics_process(delta: float) -> void:
 		# Chase the player
 		var direction = (player.global_position - global_position).normalized()
 		target_velocity = direction * speed
+		
+		var inRange = false
+		for i in range.get_overlapping_bodies():
+			if i == player:
+				inRange = true
+		
+		if inRange:
+			target_velocity = Vector2.ZERO
+			shoot()
+		
 	else:
 		# Wander randomly
 		wander_timer -= delta
@@ -28,12 +39,7 @@ func _physics_process(delta: float) -> void:
 
 	velocity = target_velocity
 
-	var col = move_and_collide(velocity * delta)
-
-	if col:
-		var c = col.get_collider()
-		if c.is_in_group("player"):
-			c.hurt(1,self)
+	move_and_collide(velocity * delta)
 
 	# Make the enemy face the movement direction
 	if velocity.length() > 1.0:
@@ -41,6 +47,22 @@ func _physics_process(delta: float) -> void:
 	
 	if hp <= 0:
 		die()
+
+var canShoot = true
+@export var acidspit : PackedScene
+func shoot():
+	if canShoot:
+		canShoot = false
+		
+		var a = acidspit.instantiate()
+		a.global_position = global_position
+		a.look_at(player.global_position)
+		a.shooter = self
+		
+		get_parent().add_child(a)
+		
+		await get_tree().create_timer(1).timeout
+		canShoot = true
 
 func die():
 	queue_free()

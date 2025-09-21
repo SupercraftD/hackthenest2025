@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
 @onready var hurtBox = $hurtBox
-@onready var player = $Player
+@onready var player
 @onready var sight : Area2D = $Sight
 
-var hp = 2
+var hp = 4
 
-var speed: float = 50.0
+var speed: float = 100.0
 var wander_direction: Vector2 = Vector2.ZERO
 var wander_timer: float = 0.0
 var wander_interval: float = 2.0 # seconds before picking a new random direction
@@ -18,6 +18,7 @@ func _physics_process(delta: float) -> void:
 		# Chase the player
 		var direction = (player.global_position - global_position).normalized()
 		target_velocity = direction * speed
+		
 	else:
 		# Wander randomly
 		wander_timer -= delta
@@ -27,13 +28,11 @@ func _physics_process(delta: float) -> void:
 		target_velocity = wander_direction * (speed * 0.5) # slower wandering
 
 	velocity = target_velocity
-
-	var col = move_and_collide(velocity * delta)
-
-	if col:
-		var c = col.get_collider()
-		if c.is_in_group("player"):
-			c.hurt(1,self)
+	if velocity.x < 0:
+		$AnimatedSprite2D.flip_v = true
+	else:
+		$AnimatedSprite2D.flip_v = false
+	move_and_collide(velocity * delta)
 
 	# Make the enemy face the movement direction
 	if velocity.length() > 1.0:
@@ -41,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	
 	if hp <= 0:
 		die()
+
 
 func die():
 	queue_free()

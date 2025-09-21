@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://y3ncxph86plk"]
+[gd_scene load_steps=22 format=3 uid="uid://d21443k2xx266"]
 
 [ext_resource type="Texture2D" uid="uid://cvxr754rg12pk" path="res://assets/DNSBelly.png" id="1_6jp26"]
 [ext_resource type="Script" uid="uid://usqg5o15ua1j" path="res://assets/dns.gd" id="1_34ru7"]
@@ -106,6 +106,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k12y0"]
 size = Vector2(59.067307, 10.909088)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qio6r"]
+size = Vector2(32.000004, 68.66667)
 
 [node name="DNS" type="CharacterBody2D"]
 scale = Vector2(1.5, 1.5)
@@ -233,5 +236,9 @@ disabled = true
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.66666764, -13.000003)
+shape = SubResource("RectangleShape2D_qio6r")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
