@@ -53,7 +53,7 @@ func _physics_process(delta: float) -> void:
 func die():
 	done = true
 	emit_signal("dead")
-	await player.promptDialogue(["[b]Firewall: [/b]You may have overridden the firewall... but you'll never get past the DNS!","You have unlocked the FLAME THROWER. Press F to use!"])
+	await player.promptDialogue(["[b]Firewall: [/b]Symtems... overloaded... Critical damage recieved... warning TSP... Good luck, user.","You have unlocked the FLAME THROWER. Press F to use!"])
 	GameInfo.availableWeapons.append("flamethrower")
 	queue_free()
 

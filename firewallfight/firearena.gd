@@ -8,6 +8,8 @@ func _ready():
 		"Look! there's the exit!"
 	])
 	await get_tree().create_tween().tween_property($fireWall,"modulate:a",1,1).finished
+	var child_node = get_node("Player/Camera2D")
+	child_node.start_shake(8.0, 2.0)
 	await $Player.promptDialogue([
 		"[center][b]Firewall: [/b]you... shall... not... PASS!!"
 	])
