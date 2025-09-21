@@ -8,8 +8,7 @@ func interact(player):
 		])
 	else:
 		await player.promptDialogue([
-			"You find mouse.exe in the folder","press space or left-click to fire a cursor"
+			"You've fought a lot of enemies!","Your max HP has now been buffed to 15.","Good luck with your journey to the website", " -A 3rd party hacker"
 		])
-		GameInfo.availableWeapons.append("mouse")
-		GameInfo.weapon += 1
+		#add maxHp
 	
