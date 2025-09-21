@@ -1,11 +1,11 @@
 [gd_scene load_steps=22 format=3 uid="uid://d21443k2xx266"]
 
 [ext_resource type="Texture2D" uid="uid://cvxr754rg12pk" path="res://assets/DNSBelly.png" id="1_6jp26"]
-[ext_resource type="Script" path="res://assets/dns.gd" id="1_34ru7"]
+[ext_resource type="Script" uid="uid://usqg5o15ua1j" path="res://assets/dns.gd" id="1_34ru7"]
 [ext_resource type="Texture2D" uid="uid://cm05q2whi3v2w" path="res://assets/DNSIdle.png" id="1_asvvf"]
 [ext_resource type="Texture2D" uid="uid://sbqnelpu77f1" path="res://assets/yellow laser.png" id="4_k12y0"]
-[ext_resource type="Script" path="res://assets/undamged_lasers.gd" id="4_qio6r"]
-[ext_resource type="Script" path="res://assets/damaged_lasers.gd" id="6_qio6r"]
+[ext_resource type="Script" uid="uid://b0hv6hjok1gng" path="res://assets/undamged_lasers.gd" id="4_qio6r"]
+[ext_resource type="Script" uid="uid://v0nyeu8x2gak" path="res://assets/damaged_lasers.gd" id="6_qio6r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_slslt"]
 atlas = ExtResource("1_6jp26")

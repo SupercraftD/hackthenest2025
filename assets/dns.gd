@@ -13,9 +13,10 @@ func laserEyes():
 	if !secondPhase:
 		undamaged.shoot()
 	
-	damaged.shoot()
+	await damaged.shoot()
 
 
 func _on_timer_timeout() -> void:
 	isAttacking = true
-	laserEyes()
+	await laserEyes()
+	timer.start()
