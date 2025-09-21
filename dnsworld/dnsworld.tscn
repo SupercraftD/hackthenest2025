@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bylhgsb5be7dn"]
+[gd_scene load_steps=19 format=4 uid="uid://bylhgsb5be7dn"]
 
 [ext_resource type="Texture2D" uid="uid://b4b05y6ibi0q1" path="res://assets/tutorialbg.png" id="1_vl641"]
 [ext_resource type="Texture2D" uid="uid://bwsngocy5xjs5" path="res://assets/DNSTile.png" id="2_cfxke"]
@@ -6,11 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://bjvfqpvrgavwn" path="res://assets/purple tile.png" id="4_3eql8"]
 [ext_resource type="PackedScene" uid="uid://1eccyxdcm8i5" path="res://player.tscn" id="4_d7tfw"]
 [ext_resource type="Texture2D" uid="uid://bwfrroknhmtxk" path="res://assets/darkPurple tile.png" id="5_rfo8g"]
-[ext_resource type="PackedScene" path="res://dnsworld/stickman.tscn" id="5_s236q"]
-[ext_resource type="PackedScene" uid="uid://ceij0u5ufcj5q" path="res://interactables/lore2.tscn" id="7_rfo8g"]
-[ext_resource type="PackedScene" path="res://dnsworld/worm.tscn" id="9_kyd23"]
+[ext_resource type="PackedScene" uid="uid://dlicb2wrl7fgx" path="res://dnsworld/stickman.tscn" id="5_s236q"]
+[ext_resource type="PackedScene" path="res://interactables/lore2.tscn" id="7_rfo8g"]
+[ext_resource type="PackedScene" uid="uid://be2xawgv5a8sx" path="res://dnsworld/worm.tscn" id="9_kyd23"]
 [ext_resource type="PackedScene" uid="uid://7qrjsahmysy3" path="res://interactables/maxHP folder.tscn" id="10_skfe1"]
-[ext_resource type="PackedScene" uid="uid://c3kec4ya5fukk" path="res://interactables/lore3.tscn" id="11_lb1mp"]
+[ext_resource type="PackedScene" path="res://interactables/lore3.tscn" id="11_lb1mp"]
+[ext_resource type="PackedScene" uid="uid://c03qqy8251drt" path="res://interactables/dnsportal.tscn" id="12_blt21"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s236q"]
 texture = ExtResource("2_cfxke")
@@ -42,6 +43,9 @@ sources/0 = SubResource("TileSetAtlasSource_s236q")
 sources/1 = SubResource("TileSetAtlasSource_3eql8")
 sources/2 = SubResource("TileSetAtlasSource_xcicc")
 sources/3 = SubResource("TileSetAtlasSource_kyd23")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lb1mp"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="dnsworld" type="Node2D"]
 
@@ -102,3 +106,15 @@ position = Vector2(1872, 1344)
 
 [node name="lore3 txt" parent="." instance=ExtResource("11_lb1mp")]
 position = Vector2(926, 517)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1172.0
+offset_bottom = 660.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lb1mp")
+
+[node name="dnsportal" parent="." instance=ExtResource("12_blt21")]
+position = Vector2(2325, 513)
+scale = Vector2(0.4706564, 0.4706564)
