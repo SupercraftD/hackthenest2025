@@ -27,6 +27,8 @@ var isRolling = false
 
 var canHurt = true
 
+var invuln = false
+
 func _ready():
 	$flamegeyser/flamegeyser.playerSpawned = true
 	hpbar.max_value = hp
@@ -139,7 +141,7 @@ func shoot():
 
 func hurt(dmg, atk):
 
-	if canHurt and not isRolling and atk != $flamegeyser/flamegeyser:
+	if canHurt and not isRolling and atk != $flamegeyser/flamegeyser and not invuln:
 		hp -= dmg
 		$Camera2D.start_shake(2.0, 0.3)
 		canHurt = false
