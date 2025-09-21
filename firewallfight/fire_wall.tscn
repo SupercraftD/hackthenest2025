@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dk3o83siqumn8"]
 
 [ext_resource type="Script" uid="uid://7ls6j3f1ni5j" path="res://firewallfight/fire_wall.gd" id="1_3vaq4"]
-[ext_resource type="PackedScene" uid="uid://bpfe3d4ulpo5" path="res://projectiles/fireball.tscn" id="2_3vaq4"]
+[ext_resource type="PackedScene" path="res://projectiles/fireball.tscn" id="2_3vaq4"]
 [ext_resource type="Texture2D" uid="uid://da1rlu82o5a8e" path="res://assets/pixil-frame-0 (4).png" id="3_3vaq4"]
 [ext_resource type="PackedScene" uid="uid://y8hxgvxgb2wa" path="res://firewallfight/flamegeyser.tscn" id="3_y5qqd"]
 [ext_resource type="Texture2D" uid="uid://btvihi5o47hm2" path="res://assets/fireHealthBarOutside.png" id="5_ljij2"]
