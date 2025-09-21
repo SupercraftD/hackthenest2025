@@ -27,10 +27,7 @@ func _physics_process(delta: float) -> void:
 		target_velocity = wander_direction * (speed * 0.5) # slower wandering
 
 	velocity = target_velocity
-	if velocity.x < 0:
-		$AnimatedSprite2D.flip_v = true
-	else:
-		$AnimatedSprite2D.flip_v = false
+
 	var col = move_and_collide(velocity * delta)
 
 	if col:
