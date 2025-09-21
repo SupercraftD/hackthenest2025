@@ -12,7 +12,7 @@ var dead = false
 var rollSpeed = 200
 var rollVector = Vector2()
 
-var hp = 10
+var hp = GameInfo.playerHp
 
 var stam = 100
 
