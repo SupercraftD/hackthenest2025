@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cm180gnp5vhe4"]
 
 [ext_resource type="Script" uid="uid://dm7pcmluyy15v" path="res://fire_spirit.gd" id="1_7atee"]
-[ext_resource type="Texture2D" uid="uid://cvet06tanmwtf" path="res://assets/spiritWalk.png" id="2_tlq7f"]
+[ext_resource type="Texture2D" uid="uid://b488vnpotbdco" path="res://assets/newPi.png" id="2_tlq7f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1px8b"]
 atlas = ExtResource("2_tlq7f")
@@ -36,14 +36,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 5.0
+"speed": 9.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w7esh"]
-radius = 356.08987
+radius = 212.33936
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nm4tf"]
-radius = 16.0
+radius = 25.0
 
 [node name="FireSpirit" type="CharacterBody2D"]
 collision_layer = 3
@@ -53,10 +53,11 @@ script = ExtResource("1_7atee")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1.370907e-06, -4.7683716e-07)
-scale = Vector2(0.7291667, 0.6979167)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_w7esh")
 animation = &"jump"
 autoplay = "jump"
+frame_progress = 0.6534173
 
 [node name="Sight" type="Area2D" parent="."]
 position = Vector2(6, -2)

@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 var hp = 3
 
-var speed: float = 75.0
+var speed: float = 175.0
 var wander_direction: Vector2 = Vector2.ZERO
 var wander_timer: float = 0.0
 var wander_interval: float = 2.0 # seconds before picking a new random direction
@@ -27,10 +27,7 @@ func _physics_process(delta: float) -> void:
 		target_velocity = wander_direction * (speed * 0.5) # slower wandering
 
 	velocity = target_velocity
-	if velocity.x < 0:
-		$AnimatedSprite2D.flip_v = true
-	else:
-		$AnimatedSprite2D.flip_v = false
+
 	var col = move_and_collide(velocity * delta)
 
 	if col:
@@ -39,9 +36,7 @@ func _physics_process(delta: float) -> void:
 			c.hurt(4,self)
 			die()
 
-	# Make the enemy face the movement direction
-	if velocity.length() > 1.0:
-		rotation = velocity.angle()
+
 	
 	if hp <= 0:
 		die()
