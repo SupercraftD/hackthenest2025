@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 var hp = 3
 
-var speed: float = 125.0
+var speed: float = 175.0
 var wander_direction: Vector2 = Vector2.ZERO
 var wander_timer: float = 0.0
 var wander_interval: float = 2.0 # seconds before picking a new random direction
