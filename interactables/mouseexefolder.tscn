@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b12alv8jkih7h"]
+[gd_scene load_steps=4 format=3 uid="uid://w51o1xbfodfw"]
 
 [ext_resource type="Script" uid="uid://6jbcwicd2nj8" path="res://interactables/mouseexefolder.gd" id="1_ohqmw"]
 [ext_resource type="Texture2D" uid="uid://megv52h35wen" path="res://assets/folder.png" id="2_eodhw"]
