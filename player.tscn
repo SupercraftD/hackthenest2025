@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://1eccyxdcm8i5"]
+[gd_scene load_steps=30 format=3 uid="uid://1eccyxdcm8i5"]
 
 [ext_resource type="Script" uid="uid://sm40qmo2rdgy" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://jah366jyakid" path="res://assets/idle.png" id="3_1jxqw"]
@@ -8,10 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://pfyjw8n0bcli" path="res://roll.tscn" id="4_hqtel"]
 [ext_resource type="Texture2D" uid="uid://cqbayvbks4kw8" path="res://assets/shooting.png" id="5_dw050"]
 [ext_resource type="PackedScene" uid="uid://s6psh0ipc6ds" path="res://dust.tscn" id="5_sweqy"]
-[ext_resource type="Script" path="res://dialoguepopup.gd" id="9_nvl01"]
+[ext_resource type="Script" uid="uid://b1wsymee5q140" path="res://dialoguepopup.gd" id="9_nvl01"]
 [ext_resource type="Texture2D" uid="uid://pcjfhvdms82i" path="res://assets/outsideSTM.png" id="10_nvl01"]
 [ext_resource type="Texture2D" uid="uid://ctc6gwp7u772u" path="res://assets/insideSTM.png" id="11_ivps1"]
 [ext_resource type="Texture2D" uid="uid://dq18vwj26wsrd" path="res://assets/insideHealth.png" id="12_ivps1"]
+[ext_resource type="PackedScene" uid="uid://y8hxgvxgb2wa" path="res://firewallfight/flamegeyser.tscn" id="13_urp6f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
 size = Vector2(24, 34)
@@ -236,3 +237,12 @@ nine_patch_stretch = true
 texture_over = ExtResource("10_nvl01")
 texture_progress = ExtResource("12_ivps1")
 metadata/_edit_use_anchors_ = true
+
+[node name="flamegeyser" type="Node2D" parent="."]
+visible = false
+
+[node name="flamegeyser" parent="flamegeyser" instance=ExtResource("13_urp6f")]
+position = Vector2(10, 1.9999995)
+rotation = -1.5740815
+scale = Vector2(0.99999994, 0.99999994)
+playerSpawned = true

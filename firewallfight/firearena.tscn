@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=4 uid="uid://su3imthykiwk"]
+[gd_scene load_steps=8 format=4 uid="uid://su3imthykiwk"]
 
 [ext_resource type="Script" uid="uid://ea42dp3rx8ey" path="res://firewallfight/firearena.gd" id="1_8t3u1"]
 [ext_resource type="Texture2D" uid="uid://b4b05y6ibi0q1" path="res://assets/tutorialbg.png" id="1_8th7u"]
 [ext_resource type="TileSet" uid="uid://bo8xvbdjcm26w" path="res://assets/tileset.tres" id="2_p7yk6"]
 [ext_resource type="PackedScene" uid="uid://1eccyxdcm8i5" path="res://player.tscn" id="3_vhopj"]
 [ext_resource type="PackedScene" uid="uid://dk3o83siqumn8" path="res://firewallfight/fire_wall.tscn" id="4_gsrpm"]
+[ext_resource type="PackedScene" uid="uid://dvycy3tycpdxi" path="res://interactables/fireportal.tscn" id="6_htexb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_htexb"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="firearena" type="Node2D"]
 texture_filter = 1
@@ -29,3 +33,18 @@ position = Vector2(343, 532)
 
 [node name="fireWall" parent="." instance=ExtResource("4_gsrpm")]
 position = Vector2(120, 525)
+
+[node name="fireportal" parent="." instance=ExtResource("6_htexb")]
+modulate = Color(1.2513996e-06, 0.6078127, 0.59567976, 1)
+position = Vector2(2, 526)
+scale = Vector2(0.5102056, 0.49892837)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(0, 1, 1, 1)
+offset_right = 1248.0
+offset_bottom = 720.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_htexb")

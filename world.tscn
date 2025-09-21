@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" path="res://interactables/fireWall1.tscn" id="9_wse8f"]
 [ext_resource type="PackedScene" path="res://interactables/fireWall2.tscn" id="10_ic0uy"]
 [ext_resource type="PackedScene" path="res://interactables/PortalEnter 1.tscn" id="11_ic0uy"]
-[ext_resource type="PackedScene" uid="uid://dr1il6sc1imu8" path="res://fire_spirit.tscn" id="12_k3n1d"]
+[ext_resource type="PackedScene" uid="uid://c2wgvenio1oty" path="res://fire_spirit.tscn" id="12_k3n1d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ic0uy"]
 bg_color = Color(0, 0, 0, 1)
