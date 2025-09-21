@@ -38,8 +38,8 @@ animations = [{
 radius = 252.28555
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c761e"]
-radius = 14.0
-height = 38.0
+radius = 16.0
+height = 32.0
 
 [node name="Bug" type="CharacterBody2D"]
 collision_mask = 3
@@ -47,6 +47,7 @@ script = ExtResource("1_c761e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+rotation = 1.583955
 sprite_frames = SubResource("SpriteFrames_i5jvq")
 animation = &"jump"
 frame = 2
