@@ -4,7 +4,7 @@ func interact(player):
 	
 	if "mouse" in GameInfo.availableWeapons:
 		await player.promptDialogue([
-			"This folder is empty.."
+			"This folder is empty..."
 		])
 	else:
 		await player.promptDialogue([
