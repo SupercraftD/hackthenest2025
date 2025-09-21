@@ -83,3 +83,27 @@ position = Vector2(4968, 443)
 
 [node name="FireSpirit4" parent="." instance=ExtResource("12_k3n1d")]
 position = Vector2(5108, 269)
+
+[node name="Bug2" parent="." instance=ExtResource("4_aqk2v")]
+position = Vector2(3019, 790)
+
+[node name="Bug3" parent="." instance=ExtResource("4_aqk2v")]
+position = Vector2(3041, 376)
+
+[node name="Bug4" parent="." instance=ExtResource("4_aqk2v")]
+position = Vector2(3538, 919)
+
+[node name="Bug5" parent="." instance=ExtResource("4_aqk2v")]
+position = Vector2(3731, 353)
+
+[node name="Bug6" parent="." instance=ExtResource("4_aqk2v")]
+position = Vector2(4181, 929)
+
+[node name="Bug7" parent="." instance=ExtResource("4_aqk2v")]
+position = Vector2(4271, 411)
+
+[node name="Bug8" parent="." instance=ExtResource("4_aqk2v")]
+position = Vector2(4651, 72)
+
+[node name="Bug9" parent="." instance=ExtResource("4_aqk2v")]
+position = Vector2(4803, 1082)
